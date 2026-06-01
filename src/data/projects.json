@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "vnsales",
+    "title": "VNSales",
+    "tag": "Sales Management",
+    "description": "A practical student management platform built for businesses, including modules for customer management, sales tracking, and reporting.",
+    "longDescription": "A comprehensive sales management platform developed for a real business. The system manages customer records, tracks sales performance, generates reports, and streamlines business workflows. Deployed to production with a custom domain.",
+    "status": "Production",
+    "problem": "The business needed a centralized system to manage customer data, track sales performance, and generate reports — replacing manual spreadsheets.",
+    "solution": "Built a full-stack sales management platform with customer management modules, real-time sales tracking, automated reporting, and role-based access control. Designed a PostgreSQL database schema optimized for business workflows.",
+    "techStack": ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind"],
+    "challenges": [
+      "Understanding real business workflows",
+      "PostgreSQL database schema design",
+      "Role-based authorization",
+      "Production deployment & domain setup"
+    ],
+    "lessons": [
+      "Real-world business requirements gathering",
+      "PostgreSQL optimization & indexing",
+      "Production deployment with CI/CD",
+      "Client communication & feedback loops"
+    ],
+    "links": { "live": "https://vnsales.org", "github": "" },
+    "featured": true
+  },
+  {
+    "slug": "ninjashop",
+    "title": "NinjaShop",
+    "tag": "E-Commerce",
+    "description": "An online toy store management system built with React 19 and Node.js, featuring product management, cart, and order processing.",
+    "longDescription": "A full-featured e-commerce platform for managing an online toy store. Built with React 19 and Vite on the frontend, with a Node.js Express backend connected to MongoDB. Includes product management, shopping cart, order processing, user authentication, and sales analytics with Recharts.",
+    "status": "Development",
+    "problem": "Small toy businesses lack an affordable digital platform to manage products, process orders, and track sales online.",
+    "solution": "Developed a complete e-commerce system with a React 19 frontend (Vite), Node.js Express API, and MongoDB database. Features include product CRUD, cart management, order workflows, JWT authentication, and interactive sales dashboards.",
+    "techStack": ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
+    "challenges": [
+      "Shopping cart state across sessions",
+      "Order lifecycle management",
+      "Payment flow integration",
+      "Image upload with Multer"
+    ],
+    "lessons": [
+      "Full-stack e-commerce architecture",
+      "MongoDB schema design for orders",
+      "RESTful API design patterns",
+      "Frontend-backend integration"
+    ],
+    "links": { "live": "", "github": "https://github.com/tboi0602/NinjaShop" },
+    "featured": true
+  },
+  {
+    "slug": "pawpal",
+    "title": "PawPal",
+    "tag": "Pet Care",
+    "description": "A service-oriented architecture (SOA) project for pet product and service management with microservices.",
+    "longDescription": "A service-oriented architecture (SOA) practice project that manages pet products and services. The system uses a React 19 (Vite) frontend with a Node.js API gateway routing to multiple backend microservices, each handling a specific domain. Uses MongoDB for data persistence.",
+    "status": "Development",
+    "problem": "Pet owners and service providers need a unified platform to manage pet profiles, products, and care services efficiently.",
+    "solution": "Designed an SOA-based system with a React 19 client, a Node.js API Gateway, and multiple microservices for user management, pet profiles, product inventory, and service booking. Uses MongoDB and ensures loose coupling between services.",
+    "techStack": ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
+    "challenges": [
+      "Microservices communication design",
+      "API Gateway routing logic",
+      "Service boundary decomposition",
+      "Shared data consistency"
+    ],
+    "lessons": [
+      "SOA & microservices architecture patterns",
+      "API Gateway pattern implementation",
+      "Service decomposition strategies",
+      "MongoDB in distributed systems"
+    ],
+    "links": { "live": "", "github": "https://github.com/tboi0602/PawPal" },
+    "featured": true
+  },
+  {
+    "slug": "vu-tru-gom",
+    "title": "Vu Tru Gom",
+    "tag": "Startup Project",
+    "description": "A branding-focused e-commerce website for a pottery startup, reaching Top 12 in the Student Startup Competition 2025-2026.",
+    "longDescription": "A branding-focused e-commerce website for a pottery startup. Designed to showcase the brand identity while providing online store functionality. The project reached Top 12 in the Student Startup Idea Competition 2025-2026, demonstrating product thinking and execution skills.",
+    "status": "Production",
+    "problem": "A ceramics startup needs a website that balances brand storytelling and identity certification, along with e-commerce functionality, to attract customers and investors.",
+    "solution": "Created a brand-first website with visual storytelling elements, product galleries, and integrated e-commerce capabilities. Focused on user experience and brand presence to support both sales and pitch presentations.",
+    "techStack": ["Next.js", "TypeScript", "Node.js", "Tailwind"],
+    "challenges": [
+      "Balancing brand identity with UI design",
+      "Product photography & presentation",
+      "Startup pitch requirements",
+      "Performance optimization"
+    ],
+    "lessons": [
+      "Brand-driven design strategy",
+      "Startup pitching & presentation",
+      "E-commerce UX best practices",
+      "Building for competition judging criteria"
+    ],
+    "links": { "live": "https://vutrugom.online", "github": "" },
+    "featured": true
+  },
+  {
+    "slug": "roll-call-tra-vinh",
+    "title": "Roll Call",
+    "tag": "Management System",
+    "description": "A student attendance management system with QR check-in, real-time statistics, and responsive glassmorphism UI.",
+    "longDescription": "A digital roll call system built for Tra Vinh University. Features QR code-based student check-in, real-time attendance tracking, comprehensive statistics dashboard, and role-based access for admins. Built with a dark futuristic UI featuring glassmorphism design and smooth animations.",
+    "status": "Development",
+    "problem": "Educational institutions needed to digitize attendance tracking — replacing paper roll calls with an efficient, real-time digital system.",
+    "solution": "Developed a Next.js 16 application with QR barcode generation (jsbarcode) for student check-in, FingerprintJS for device recognition, real-time attendance stats, and an admin dashboard with exportable reports. Features a premium glassmorphism dark UI.",
+    "techStack": ["Next.js", "TypeScript", "MongoDB", "Tailwind"],
+    "challenges": [
+      "QR code generation & scanning flow",
+      "Real-time attendance updates",
+      "Device fingerprinting for check-in",
+      "Responsive UI across devices"
+    ],
+    "lessons": [
+      "Next.js App Router patterns",
+      "MongoDB with Mongoose ODM",
+      "Barcode/QR integration in web apps",
+      "Dark UI design with glassmorphism"
+    ],
+    "links": { "live": "https://roll-call-travinh.vercel.app", "github": "https://github.com/tboi0602/roll-call-travinh" },
+    "featured": true
+  },
+  {
+    "slug": "cost-sharing",
+    "title": "CostShare",
+    "tag": "Group Finance",
+    "description": "A group expense sharing and debt balancing app with a dark futuristic UI, built with Next.js 16 and MongoDB.",
+    "longDescription": "A full-stack web application for group expense sharing and debt balancing. Features include JWT authentication, group management, session-based expense tracking, multi-payer expense splitting, automatic equal split calculation, a greedy debt simplifier algorithm, settlement tracking, and a comprehensive dashboard. Built with a dark futuristic UI featuring cyan glow effects and glassmorphism.",
+    "status": "Development",
+    "problem": "Friends and groups need a simple way to split expenses, track shared costs, and settle debts without manual calculations or confusing spreadsheets.",
+    "solution": "Built a Next.js 16 application with MongoDB, JWT authentication (jose), and Zustand state management. Core features include group creation, session-based expense management, multi-payer support, auto equal-split, a greedy algorithm debt simplifier, and settlement tracking. All with a premium dark futuristic UI.",
+    "techStack": ["Next.js", "TypeScript", "MongoDB", "Tailwind"],
+    "challenges": [
+      "Debt calculation & simplifier algorithm",
+      "Multi-payer expense splitting logic",
+      "JWT authentication with refresh tokens",
+      "State management across complex forms"
+    ],
+    "lessons": [
+      "Greedy algorithm for debt simplification",
+      "Next.js 16 App Router & Server Actions",
+      "MongoDB aggregation pipelines",
+      "Dark UI design system implementation"
+    ],
+    "links": { "live": "https://cost-sharing-zeta.vercel.app", "github": "https://github.com/tboi0602/cost-sharing" },
+    "featured": true
+  }
+]

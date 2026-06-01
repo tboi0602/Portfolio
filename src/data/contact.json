@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Email",
+    "value": "hyhtantai62@gmail.com",
+    "href": "mailto:hyhtantai62@gmail.com",
+    "icon": "Mail"
+  },
+  {
+    "label": "GitHub",
+    "value": "github.com/tboi0602",
+    "href": "https://github.com/tboi0602",
+    "icon": "FolderGit2"
+  },
+  {
+    "label": "Portfolio CV",
+    "value": "Download CV",
+    "href": "/HuynhTanTai_CV.docx",
+    "icon": "FileText"
+  }
+]

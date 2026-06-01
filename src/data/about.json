@@ -1,0 +1,9 @@
+{
+  "description": "I build fullstack web applications with a strong focus on UX/UI. Currently studying Software Engineering at Ton Duc Thang University.",
+  "secondaryDescription": "Passionate about turning complex problems into simple, beautiful, and intuitive digital experiences.",
+  "stats": [
+    { "label": "GPA", "value": "7.44", "icon": "BookOpen" },
+    { "label": "Projects", "value": "5+", "icon": "FolderGit2" },
+    { "label": "Tech Stack", "value": "10+", "icon": "Layers" }
+  ]
+}
