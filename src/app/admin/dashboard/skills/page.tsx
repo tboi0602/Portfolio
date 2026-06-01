@@ -12,6 +12,7 @@ const emptyGroup = (): SkillGroup => ({
 
 export default function AdminSkills() {
   const [groups, setGroups] = useState<SkillGroup[]>([]);
+  const [rawInputs, setRawInputs] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
@@ -19,7 +20,10 @@ export default function AdminSkills() {
   useEffect(() => {
     fetch("/api/skills")
       .then((res) => res.json())
-      .then(setGroups)
+      .then((data: SkillGroup[]) => {
+        setGroups(data);
+        setRawInputs(data.map((g) => g.skills.join(", ")));
+      })
       .finally(() => setLoading(false));
   }, []);
 
@@ -31,19 +35,46 @@ export default function AdminSkills() {
     });
   }
 
-  function updateSkills(index: number, raw: string) {
-    updateGroup(index, "skills", raw.split(",").map((s) => s.trim()).filter(Boolean));
+  function setRaw(index: number, value: string) {
+    setRawInputs((prev) => {
+      const next = [...prev];
+      next[index] = value;
+      return next;
+    });
+  }
+
+  function parseRaw(index: number) {
+    const skills = (rawInputs[index] || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    updateGroup(index, "skills", skills);
   }
 
   function addGroup() {
     setGroups([...groups, emptyGroup()]);
+    setRawInputs([...rawInputs, ""]);
   }
 
   function removeGroup(index: number) {
     setGroups(groups.filter((_, i) => i !== index));
+    setRawInputs(rawInputs.filter((_, i) => i !== index));
+  }
+
+  function parseAllRaw() {
+    setGroups((prev) =>
+      prev.map((g, i) => ({
+        ...g,
+        skills: (rawInputs[i] || "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+      }))
+    );
   }
 
   async function handleSave() {
+    parseAllRaw();
     setSaving(true);
     setMessage("");
 
@@ -118,8 +149,9 @@ export default function AdminSkills() {
               </label>
               <input
                 type="text"
-                value={group.skills.join(", ")}
-                onChange={(e) => updateSkills(i, e.target.value)}
+                value={rawInputs[i] || ""}
+                onChange={(e) => setRaw(i, e.target.value)}
+                onBlur={() => parseRaw(i)}
                 placeholder="React, Next.js, TypeScript"
                 className="w-full h-10 px-3 rounded-lg bg-white/[0.03] border border-white/[0.08] text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-500/30 transition-all"
               />

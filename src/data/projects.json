@@ -173,7 +173,7 @@
     "tag": "Group Finance",
     "description": "A group expense sharing and debt balancing app with a dark futuristic UI, built with Next.js 16 and MongoDB.",
     "longDescription": "A full-stack web application for group expense sharing and debt balancing. Features include JWT authentication, group management, session-based expense tracking, multi-payer expense splitting, automatic equal split calculation, a greedy debt simplifier algorithm, settlement tracking, and a comprehensive dashboard. Built with a dark futuristic UI featuring cyan glow effects and glassmorphism.",
-    "status": "Development",
+    "status": "Production",
     "problem": "Friends and groups need a simple way to split expenses, track shared costs, and settle debts without manual calculations or confusing spreadsheets.",
     "solution": "Built a Next.js 16 application with MongoDB, JWT authentication (jose), and Zustand state management. Core features include group creation, session-based expense management, multi-payer support, auto equal-split, a greedy algorithm debt simplifier, and settlement tracking. All with a premium dark futuristic UI.",
     "techStack": [
