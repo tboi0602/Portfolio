@@ -68,7 +68,7 @@ export function Hero() {
                   <ArrowRight size={14} className="ml-2 group-hover:translate-x-0.5 transition-transform" />
                 </a>
                 <a
-                  href="/HuynhTanTai_CV_Formatted.docx"
+                  href="/HuynhTanTai_CV.docx"
                   download
                   className="group inline-flex h-11 px-6 items-center justify-center rounded-xl border border-white/10 text-sm text-zinc-300 hover:text-white hover:border-white/20 hover:bg-white/[0.04] transition-all duration-200"
                 >
