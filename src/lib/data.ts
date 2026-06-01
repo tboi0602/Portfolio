@@ -1,7 +1,11 @@
 import fs from "fs";
 import path from "path";
+import { Redis } from "@upstash/redis";
 
 const DATA_DIR = path.join(process.cwd(), "src/data");
+const KV_URL = process.env.KV_URL || process.env.REDIS_URL || "";
+const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.REDIS_TOKEN || "";
+const useKV = !!KV_URL && !!KV_TOKEN;
 
 export interface Project {
   slug: string;
@@ -64,6 +68,17 @@ function readJson<T>(file: string): T {
   return JSON.parse(raw) as T;
 }
 
+async function readJsonAsync<T>(file: string): Promise<T> {
+  if (useKV) {
+    try {
+      const redis = new Redis({ url: KV_URL, token: KV_TOKEN });
+      const cached = await redis.get<string>(`portfolio:${file}`);
+      if (cached) return JSON.parse(cached) as T;
+    } catch {}
+  }
+  return readJson<T>(file);
+}
+
 export function getProjects(): Project[] {
   return readJson<Project[]>("projects.json");
 }
@@ -74,6 +89,34 @@ export function getProjectBySlug(slug: string): Project | undefined {
 
 export function getFeaturedProjects(): Project[] {
   return getProjects().filter((p) => p.featured);
+}
+
+export async function getProjectsAsync(): Promise<Project[]> {
+  return readJsonAsync<Project[]>("projects.json");
+}
+
+export async function getSkillsAsync(): Promise<SkillGroup[]> {
+  return readJsonAsync<SkillGroup[]>("skills.json");
+}
+
+export async function getTimelineAsync(): Promise<TimelineEvent[]> {
+  return readJsonAsync<TimelineEvent[]>("timeline.json");
+}
+
+export async function getAboutAsync(): Promise<AboutData> {
+  return readJsonAsync<AboutData>("about.json");
+}
+
+export async function getCVAsync(): Promise<CV> {
+  return readJsonAsync<CV>("cv.json");
+}
+
+export async function getCertificatesAsync(): Promise<Certificate[]> {
+  return readJsonAsync<Certificate[]>("certificates.json");
+}
+
+export async function getContactAsync(): Promise<ContactItem[]> {
+  return readJsonAsync<ContactItem[]>("contact.json");
 }
 
 export function getSkills(): SkillGroup[] {
