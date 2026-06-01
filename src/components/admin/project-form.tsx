@@ -64,7 +64,7 @@ export function ProjectForm({ initial }: ProjectFormProps) {
     });
 
     if (res.ok) {
-      router.push("/admin/projects");
+      router.push("/admin/dashboard/projects");
       router.refresh();
     } else {
       const data = await res.json();
@@ -127,10 +127,10 @@ export function ProjectForm({ initial }: ProjectFormProps) {
           <select
             value={form.status}
             onChange={(e) => update("status", e.target.value as "Production" | "Development")}
-            className="w-full h-11 px-4 rounded-xl bg-white/[0.03] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-cyan-500/30 transition-all"
+            className="w-full h-11 px-4 rounded-xl bg-[#1a1a24] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-cyan-500/30 transition-all"
           >
-            <option value="Development">Development</option>
-            <option value="Production">Production</option>
+            <option value="Development" className="bg-[#1a1a24] text-white">Development</option>
+            <option value="Production" className="bg-[#1a1a24] text-white">Production</option>
           </select>
         </Field>
 

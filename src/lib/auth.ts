@@ -10,8 +10,7 @@ function hashToken(token: string): string {
 
 export function createSessionToken(password: string): string | null {
   if (password !== ADMIN_PASSWORD) return null;
-  const raw = password + ":" + Date.now();
-  return hashToken(raw);
+  return getStoredToken();
 }
 
 export function verifyToken(token: string): boolean {

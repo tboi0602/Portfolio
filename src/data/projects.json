@@ -8,7 +8,13 @@
     "status": "Production",
     "problem": "The business needed a centralized system to manage customer data, track sales performance, and generate reports — replacing manual spreadsheets.",
     "solution": "Built a full-stack sales management platform with customer management modules, real-time sales tracking, automated reporting, and role-based access control. Designed a PostgreSQL database schema optimized for business workflows.",
-    "techStack": ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind"],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind"
+    ],
     "challenges": [
       "Understanding real business workflows",
       "PostgreSQL database schema design",
@@ -21,7 +27,10 @@
       "Production deployment with CI/CD",
       "Client communication & feedback loops"
     ],
-    "links": { "live": "https://vnsales.org", "github": "" },
+    "links": {
+      "live": "https://vnsales.org",
+      "github": ""
+    },
     "featured": true
   },
   {
@@ -33,7 +42,13 @@
     "status": "Development",
     "problem": "Small toy businesses lack an affordable digital platform to manage products, process orders, and track sales online.",
     "solution": "Developed a complete e-commerce system with a React 19 frontend (Vite), Node.js Express API, and MongoDB database. Features include product CRUD, cart management, order workflows, JWT authentication, and interactive sales dashboards.",
-    "techStack": ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "Tailwind"
+    ],
     "challenges": [
       "Shopping cart state across sessions",
       "Order lifecycle management",
@@ -46,7 +61,10 @@
       "RESTful API design patterns",
       "Frontend-backend integration"
     ],
-    "links": { "live": "", "github": "https://github.com/tboi0602/NinjaShop" },
+    "links": {
+      "live": "",
+      "github": "https://github.com/tboi0602/NinjaShop"
+    },
     "featured": true
   },
   {
@@ -58,7 +76,13 @@
     "status": "Development",
     "problem": "Pet owners and service providers need a unified platform to manage pet profiles, products, and care services efficiently.",
     "solution": "Designed an SOA-based system with a React 19 client, a Node.js API Gateway, and multiple microservices for user management, pet profiles, product inventory, and service booking. Uses MongoDB and ensures loose coupling between services.",
-    "techStack": ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "Tailwind"
+    ],
     "challenges": [
       "Microservices communication design",
       "API Gateway routing logic",
@@ -71,7 +95,10 @@
       "Service decomposition strategies",
       "MongoDB in distributed systems"
     ],
-    "links": { "live": "", "github": "https://github.com/tboi0602/PawPal" },
+    "links": {
+      "live": "",
+      "github": "https://github.com/tboi0602/PawPal"
+    },
     "featured": true
   },
   {
@@ -83,7 +110,12 @@
     "status": "Production",
     "problem": "A ceramics startup needs a website that balances brand storytelling and identity certification, along with e-commerce functionality, to attract customers and investors.",
     "solution": "Created a brand-first website with visual storytelling elements, product galleries, and integrated e-commerce capabilities. Focused on user experience and brand presence to support both sales and pitch presentations.",
-    "techStack": ["Next.js", "TypeScript", "Node.js", "Tailwind"],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Tailwind"
+    ],
     "challenges": [
       "Balancing brand identity with UI design",
       "Product photography & presentation",
@@ -96,7 +128,10 @@
       "E-commerce UX best practices",
       "Building for competition judging criteria"
     ],
-    "links": { "live": "https://vutrugom.online", "github": "" },
+    "links": {
+      "live": "https://vutrugom.online",
+      "github": ""
+    },
     "featured": true
   },
   {
@@ -108,7 +143,12 @@
     "status": "Development",
     "problem": "Educational institutions needed to digitize attendance tracking — replacing paper roll calls with an efficient, real-time digital system.",
     "solution": "Developed a Next.js 16 application with QR barcode generation (jsbarcode) for student check-in, FingerprintJS for device recognition, real-time attendance stats, and an admin dashboard with exportable reports. Features a premium glassmorphism dark UI.",
-    "techStack": ["Next.js", "TypeScript", "MongoDB", "Tailwind"],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Tailwind"
+    ],
     "challenges": [
       "QR code generation & scanning flow",
       "Real-time attendance updates",
@@ -121,7 +161,10 @@
       "Barcode/QR integration in web apps",
       "Dark UI design with glassmorphism"
     ],
-    "links": { "live": "https://roll-call-travinh.vercel.app", "github": "https://github.com/tboi0602/roll-call-travinh" },
+    "links": {
+      "live": "",
+      "github": "https://github.com/tboi0602/roll-call-travinh"
+    },
     "featured": true
   },
   {
@@ -133,7 +176,12 @@
     "status": "Development",
     "problem": "Friends and groups need a simple way to split expenses, track shared costs, and settle debts without manual calculations or confusing spreadsheets.",
     "solution": "Built a Next.js 16 application with MongoDB, JWT authentication (jose), and Zustand state management. Core features include group creation, session-based expense management, multi-payer support, auto equal-split, a greedy algorithm debt simplifier, and settlement tracking. All with a premium dark futuristic UI.",
-    "techStack": ["Next.js", "TypeScript", "MongoDB", "Tailwind"],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Tailwind"
+    ],
     "challenges": [
       "Debt calculation & simplifier algorithm",
       "Multi-payer expense splitting logic",
@@ -146,7 +194,10 @@
       "MongoDB aggregation pipelines",
       "Dark UI design system implementation"
     ],
-    "links": { "live": "https://cost-sharing-zeta.vercel.app", "github": "https://github.com/tboi0602/cost-sharing" },
+    "links": {
+      "live": "https://cost-sharing-zeta.vercel.app",
+      "github": "https://github.com/tboi0602/cost-sharing"
+    },
     "featured": true
   }
 ]
