@@ -2,10 +2,12 @@
   {
     "title": "Frontend",
     "skills": [
-      "React",
+      "React.js",
       "Next.js",
       "TypeScript",
-      "Tailwind"
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML5/CSS3"
     ],
     "gradient": "from-cyan-500/10 to-blue-500/5",
     "icon": "Monitor"
@@ -14,7 +16,9 @@
     "title": "Backend",
     "skills": [
       "Node.js",
-      "Express",
+      "Express.js",
+      "RESTful API",
+      "JWT Authentication",
       "Python"
     ],
     "gradient": "from-emerald-500/10 to-cyan-500/5",
