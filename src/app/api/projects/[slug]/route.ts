@@ -37,7 +37,7 @@ export async function PUT(
 
   const updated = { ...projects[index], ...body, slug: projects[index].slug };
   projects[index] = updated;
-  saveProjects(projects);
+  await saveProjects(projects);
 
   return NextResponse.json(updated);
 }
@@ -58,6 +58,6 @@ export async function DELETE(
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  saveProjects(filtered);
+  await saveProjects(filtered);
   return NextResponse.json({ success: true });
 }

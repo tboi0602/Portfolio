@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     uploadedAt: new Date().toISOString(),
   };
 
-  saveCertificates([...certs, newCert]);
+  await saveCertificates([...certs, newCert]);
   return NextResponse.json(newCert, { status: 201 });
 }
 
@@ -33,6 +33,6 @@ export async function DELETE(request: Request) {
 
   const { id } = await request.json();
   const certs = getCertificates();
-  saveCertificates(certs.filter((c) => c.id !== id));
+  await saveCertificates(certs.filter((c) => c.id !== id));
   return NextResponse.json({ success: true });
 }

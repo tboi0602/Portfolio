@@ -13,6 +13,6 @@ export async function PUT(request: Request) {
   }
 
   const body = await request.json();
-  saveAbout(body);
+  await saveAbout(body);
   return NextResponse.json({ success: true });
 }

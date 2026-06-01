@@ -1,25 +1,45 @@
 [
   {
     "title": "Frontend",
-    "skills": ["React", "Next.js", "TypeScript", "Tailwind"],
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind"
+    ],
     "gradient": "from-cyan-500/10 to-blue-500/5",
     "icon": "Monitor"
   },
   {
     "title": "Backend",
-    "skills": ["Node.js", "Express", "Python"],
+    "skills": [
+      "Node.js",
+      "Express",
+      "Python"
+    ],
     "gradient": "from-emerald-500/10 to-cyan-500/5",
     "icon": "Server"
   },
   {
     "title": "Database",
-    "skills": ["MongoDB", "PostgreSQL", "SQL Server"],
+    "skills": [
+      "MongoDB",
+      "PostgreSQL",
+      "SQL Server"
+    ],
     "gradient": "from-violet-500/10 to-blue-500/5",
     "icon": "Database"
   },
   {
     "title": "Tools",
-    "skills": ["Git", "Postman", "Docker", "VS Code", "Ai coding"],
+    "skills": [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Docker",
+      "VS Code",
+      "AI Coding Tools)"
+    ],
     "gradient": "from-amber-500/10 to-rose-500/5",
     "icon": "Wrench"
   }

@@ -13,7 +13,7 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json();
-  saveCV({
+  await saveCV({
     fileName: body.fileName,
     displayName: body.displayName || "Portfolio CV",
     updatedAt: new Date().toISOString(),

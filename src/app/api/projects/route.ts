@@ -44,6 +44,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Project with this title already exists" }, { status: 409 });
   }
 
-  saveProjects([...projects, newProject]);
+  await saveProjects([...projects, newProject]);
   return NextResponse.json(newProject, { status: 201 });
 }
