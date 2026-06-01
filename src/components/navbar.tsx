@@ -20,14 +20,17 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
-      const sections = navLinks.map((l) => l.href.slice(1))
-      for (const id of sections.reverse()) {
+      const ids = navLinks.map((l) => l.href.slice(1))
+      let current = ids[0]
+      const threshold = window.innerHeight * 0.35
+      for (const id of ids) {
         const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= 150) {
-          setActiveSection(id)
-          break
+        if (!el) continue
+        if (el.getBoundingClientRect().top <= threshold) {
+          current = id
         }
       }
+      setActiveSection(current)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
