@@ -1,35 +1,15 @@
 "use client";
 
-import { Monitor, Server, Database, Wrench } from "lucide-react";
 import { Reveal } from "./reveal";
 import { TiltCard } from "./tilt-card";
+import { getIcon } from "@/lib/icon-map";
+import type { SkillGroup } from "@/lib/data";
 
-const groupIcons = [Monitor, Server, Database, Wrench];
+interface SkillsProps {
+  skills: SkillGroup[]
+}
 
-const skillGroups = [
-  {
-    title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind"],
-    gradient: "from-cyan-500/10 to-blue-500/5",
-  },
-  {
-    title: "Backend",
-    skills: ["Node.js", "Express", "Python"],
-    gradient: "from-emerald-500/10 to-cyan-500/5",
-  },
-  {
-    title: "Database",
-    skills: ["MongoDB", "PostgreSQL", "SQL Server"],
-    gradient: "from-violet-500/10 to-blue-500/5",
-  },
-  {
-    title: "Tools",
-    skills: ["Git", "Postman", "Docker", "VS Code", "Ai coding"],
-    gradient: "from-amber-500/10 to-rose-500/5",
-  },
-];
-
-export function Skills() {
+export function Skills({ skills }: SkillsProps) {
   return (
     <section id="skills" className="py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -46,8 +26,8 @@ export function Skills() {
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {skillGroups.map((group, i) => {
-            const GroupIcon = groupIcons[i];
+          {skills.map((group, i) => {
+            const GroupIcon = getIcon(group.icon);
             return (
               <Reveal key={group.title} delay={i * 0.1}>
                 <TiltCard>
@@ -58,10 +38,12 @@ export function Skills() {
                     className={`absolute inset-0 bg-gradient-to-br ${group.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                   />
                   <div className="relative">
-                    <GroupIcon
-                      size={18}
-                      className="text-zinc-500 mb-4 group-hover:text-cyan-400 transition-colors"
-                    />
+                    {GroupIcon && (
+                      <GroupIcon
+                        size={18}
+                        className="text-zinc-500 mb-4 group-hover:text-cyan-400 transition-colors"
+                      />
+                    )}
                     <h3 className="text-xs font-mono text-zinc-400 mb-4 uppercase tracking-wider">
                       {group.title}
                     </h3>

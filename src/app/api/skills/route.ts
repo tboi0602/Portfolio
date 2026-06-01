@@ -14,8 +14,8 @@ export async function PUT(request: Request) {
     }
 
     const body = await request.json();
-    const store = await saveSkills(body);
-    return NextResponse.json({ success: true, store });
+    saveSkills(body);
+    return NextResponse.json({ success: true });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Lỗi không xác định" },

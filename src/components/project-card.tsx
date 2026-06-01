@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { ExternalLink, FolderGit2, BookOpen, ArrowUpRight } from "lucide-react"
 import { TechIcon } from "./tech-icon"
 import { TiltCard } from "./tilt-card"
-import type { Project } from "@/lib/projects"
+import type { Project } from "@/lib/data"
 
 interface ProjectCardProps {
   project: Project

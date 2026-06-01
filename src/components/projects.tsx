@@ -2,8 +2,13 @@
 
 import { Reveal } from "./reveal"
 import { ProjectCard } from "./project-card"
-import { featuredProjects } from "@/lib/projects"
-export function Projects() {
+import type { Project } from "@/lib/data"
+
+interface ProjectsProps {
+  projects: Project[]
+}
+
+export function Projects({ projects }: ProjectsProps) {
   return (
     <section id="projects" className="py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -22,13 +27,13 @@ export function Projects() {
               <span className="text-gradient">.</span>
             </h2>
             <span className="hidden sm:block text-xs text-zinc-500">
-              {featuredProjects.length} projects
+              {projects.length} projects
             </span>
           </div>
         </Reveal>
 
         <div className="grid md:grid-cols-2 gap-5">
-          {featuredProjects.map((project, i) => (
+          {projects.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
           ))}
         </div>

@@ -2,29 +2,13 @@
 
 import { Calendar } from "lucide-react";
 import { Reveal } from "./reveal";
+import type { TimelineEvent } from "@/lib/data";
 
-const events = [
-  {
-    year: "2023",
-    title: "Started Software Engineering",
-    subtitle: "Ton Duc Thang University",
-  },
-  { year: "2024", title: "Built NinjaShop", subtitle: "E-Commerce Platform" },
-  { year: "2025", title: "PetPaw", subtitle: "E-Commerce Platform for pets" },
-  { year: "2025", title: "Top 12 Startup Competition", subtitle: "Vũ Trụ Gốm" },
-  {
-    year: "2026",
-    title: "Built Roll Call System",
-    subtitle: "First real project",
-  },
-  {
-    year: "2026",
-    title: "Built VNSales with Business",
-    subtitle: "Production Deployment",
-  },
-];
+interface TimelineProps {
+  timeline: TimelineEvent[]
+}
 
-export function Timeline() {
+export function Timeline({ timeline }: TimelineProps) {
   return (
     <section id="timeline" className="py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -44,7 +28,7 @@ export function Timeline() {
           <div className="absolute left-[23px] top-2 bottom-2 w-px bg-gradient-to-b from-cyan-500/40 via-blue-500/20 to-transparent" />
 
           <div className="space-y-10">
-            {events.map((event, i) => (
+            {timeline.map((event, i) => (
               <Reveal
                 key={`${event.year}-${i}`}
                 delay={i * 0.1}

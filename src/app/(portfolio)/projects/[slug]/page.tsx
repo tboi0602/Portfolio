@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, ExternalLink, FolderGit2, AlertCircle, Brain } from "lucide-react"
 import { TechIcon } from "@/components/tech-icon"
-import { getProjects, getProjectBySlug } from "@/lib/projects"
+import { getProjects, getProjectBySlug } from "@/lib/data"
 
 export function generateStaticParams() {
   const projects = getProjects()

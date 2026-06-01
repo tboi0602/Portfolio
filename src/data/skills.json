@@ -26,11 +26,7 @@
   },
   {
     "title": "Database",
-    "skills": [
-      "MongoDB",
-      "PostgreSQL",
-      "SQL Server"
-    ],
+    "skills": ["MongoDB", "PostgreSQL", "SQL Server"],
     "gradient": "from-violet-500/10 to-blue-500/5",
     "icon": "Database"
   },
