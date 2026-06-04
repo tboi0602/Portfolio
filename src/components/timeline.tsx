@@ -34,7 +34,7 @@ export function Timeline({ timeline }: TimelineProps) {
                 delay={i * 0.1}
                 direction="left"
               >
-                <div className="relative flex gap-6">
+                <div className="relative flex gap-6 group">
                   <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-2xl bg-[#111118] border border-white/[0.06] flex items-center justify-center group-hover:border-cyan-500/20 transition-colors">
                     <Calendar size={16} className="text-cyan-400" />
                   </div>

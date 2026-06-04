@@ -10,6 +10,8 @@ interface RevealProps {
   direction?: "up" | "down" | "left" | "right"
   blur?: boolean
   duration?: number
+  scale?: boolean
+  distance?: number
 }
 
 export function Reveal({
@@ -19,12 +21,14 @@ export function Reveal({
   direction = "up",
   blur = false,
   duration = 0.7,
+  scale = false,
+  distance = 30,
 }: RevealProps) {
   const directionMap = {
-    up: { y: 30 },
-    down: { y: -30 },
-    left: { x: 30 },
-    right: { x: -30 },
+    up: { y: distance },
+    down: { y: -distance },
+    left: { x: distance },
+    right: { x: -distance },
   }
 
   return (
@@ -32,12 +36,14 @@ export function Reveal({
       initial={{
         opacity: 0,
         ...directionMap[direction],
+        scale: scale ? 0.98 : 1,
         filter: blur ? "blur(6px)" : "none",
       }}
       whileInView={{
         opacity: 1,
         x: 0,
         y: 0,
+        scale: 1,
         filter: "blur(0px)",
       }}
       viewport={{ once: true, margin: "-40px" }}

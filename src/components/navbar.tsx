@@ -1,61 +1,74 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#timeline" },
   { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#timeline" },
   { label: "Contact", href: "#contact" },
-]
+];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [hidden, setHidden] = useState(false);
+  const lastScroll = useRef(0);
 
   useEffect(() => {
+    const ids = navLinks.map((l) => l.href.slice(1));
+    const observers: IntersectionObserver[] = [];
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-35% 0px -55% 0px" },
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-      const ids = navLinks.map((l) => l.href.slice(1))
-      let current = ids[0]
-      const threshold = window.innerHeight * 0.35
-      for (const id of ids) {
-        const el = document.getElementById(id)
-        if (!el) continue
-        if (el.getBoundingClientRect().top <= threshold) {
-          current = id
-        }
-      }
-      setActiveSection(current)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+      const current = window.scrollY;
+      if (current > lastScroll.current && current > 80) setHidden(true);
+      else setHidden(false);
+      lastScroll.current = current;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      observers.forEach((o) => o.disconnect());
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl "
+          ? "bg-background/80 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.04)]"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a
-          href="#home"
-          className="text-lg font-semibold tracking-tight"
-        >
+        <a href="#home" className="text-lg font-semibold tracking-tight">
           <span className="text-white">Tan Tai</span>
           <span className="text-cyan-400">.</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.slice(1)
+            const isActive = activeSection === link.href.slice(1);
             return (
               <li key={link.href}>
                 <a
@@ -65,18 +78,23 @@ export function Navbar() {
                       ? "text-white bg-white/5"
                       : "text-zinc-500 hover:text-zinc-300 hover:bg-white/[0.02]"
                   }`}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   {link.label}
                   {isActive && (
                     <motion.div
                       layoutId="nav-indicator"
                       className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-400/50 rounded-full"
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </a>
               </li>
-            )
+            );
           })}
         </ul>
 
@@ -104,7 +122,14 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-2.5 text-sm text-zinc-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                    className={`block px-4 py-2.5 text-sm rounded-lg transition-all ${
+                      activeSection === link.href.slice(1)
+                        ? "text-cyan-400 bg-white/5"
+                        : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    }`}
+                    aria-current={
+                      activeSection === link.href.slice(1) ? "page" : undefined
+                    }
                   >
                     {link.label}
                   </a>
@@ -115,5 +140,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

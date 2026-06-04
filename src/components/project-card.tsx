@@ -37,7 +37,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         className={`absolute inset-0 bg-gradient-to-br ${projectColors[index % projectColors.length]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
       />
 
-      <div className="relative p-6 sm:p-7">
+      <div className="relative p-6 sm:p-7" style={{ zIndex: 1 }}>
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:border-cyan-500/20 transition-colors">

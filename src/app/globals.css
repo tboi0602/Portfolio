@@ -13,8 +13,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
+html.lenis {
+  overflow: hidden;
+}
+html.lenis body {
+  overflow: hidden;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
 * {
@@ -44,41 +50,6 @@ body {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes border-glow {
-  0%, 100% {
-    border-color: rgba(34, 211, 238, 0.1);
-  }
-  50% {
-    border-color: rgba(34, 211, 238, 0.3);
-  }
-}
 
 .glass {
   background: rgba(255, 255, 255, 0.03);
@@ -122,14 +93,10 @@ body {
   opacity: 1;
 }
 
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
